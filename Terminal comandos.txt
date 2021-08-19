@@ -1,0 +1,62 @@
+rmdir = remove o diretorio
+
+Rm = deleta arquivo  
+
+Ls = Mostra o conteúdo do diretório atual 
+
+Ls -l = Mostra toda a informação do conteúdo do diretório
+
+Touch -t = Modifica a data 
+
+Mkdir = cria diretoria 
+
+Mkdir < nome do arquivo = cria arquivo 
+
+Chmod = altera o acesso sendo u=users g=group a=todos o=outros r=4 w=2 x=1
+
+Cat > = add caracteres 
+
+Cd = navega entres dos diretórios 
+
+Ls -la = mostra arquivos ocultos 
+
+Ln = duplica arquivo 
+
+Ln -s = duplica pasta
+
+Git log = mostra as ultimas alterações no git
+
+Git status = mostra o status
+
+ m U p t
+
+Cp = copia o arquivo 
+
+Patch = verifica a diferença entre arquivos 
+
+git log -5 --pretty=format:%H
+
+git ls-files --o -i --exclude-standard
+
+cat /etc/passwd | sed '/^#/d' | sed -n 'n;p' | cut -d : -f 1,1 | rev | sort -r | 
+
+
+COMANDO ESSENCIAIS PARA O C
+
+gcc = compila o output c
+
+gcc -Wall -Werror -Wextra = verifica de acordo com as normas e mostra os erros se tiver.
+
+%d = imprime na tela o valor da variavel em numero
+
+%c = imprime na tela o valor da variable em caracteres 
+
+%lu = imprime na tela o valor da variable em byts
+
+Sizeof = recupera o tamanho de uma variável 
+
+
+ft_putchar();
+
+
+

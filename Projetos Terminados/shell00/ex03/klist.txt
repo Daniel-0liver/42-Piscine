@@ -1,0 +1,6 @@
+Credentials cache: API:EDF2AFE1-B259-4066-8A38-F81A32247CB1
+        Principal: dateixei@42LISBOA.COM
+
+  Issued                Expires               Principal
+Aug  3 22:49:27 2021  Aug  4 08:49:27 2021  krbtgt/42LISBOA.COM@42LISBOA.COM
+Aug  3 22:49:29 2021  Aug  4 08:49:27 2021  HTTP/student-storage.42lisboa.com@42LISBOA.COM
