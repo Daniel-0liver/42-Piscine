@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dateixei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 19:23:55 by dateixei          #+#    #+#             */
-/*   Updated: 2021/08/25 02:14:17 by dateixei         ###   ########.fr       */
+/*   Created: 2021/08/19 20:51:53 by dateixei          #+#    #+#             */
+/*   Updated: 2021/08/19 21:14:14 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-int	main(int	argc, char	**argv)
+int	main(int	argc,char	**argv)
 {
-	int		n;
+	(void)	argc;
+	(void)	argv;
+	int	index;
+	int	index2;
 
-	(void) argc;
-	n = 0;
-	while (argv[0][n] != '\0')
+	index = 1;
+	while (argv[index] != (void *)0)
 	{
-		write(1, &argv[0][n], 1);
-		n++;
+		index2 = 0;
+		while (argv[index][index2] != '\0')
+		{
+			write(1, &argv[index][index2], 1);
+			index2++;
+		}
+		write(1, "\n", 1);
+		index++;
 	}
-	write(1, "\n", 1);
-	return (0);
 }

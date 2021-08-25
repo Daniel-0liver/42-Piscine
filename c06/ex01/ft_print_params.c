@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dateixei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 20:51:53 by dateixei          #+#    #+#             */
-/*   Updated: 2021/08/19 21:14:14 by dateixei         ###   ########.fr       */
+/*   Updated: 2021/08/23 18:42:08 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-int	main(int	argc,char	**argv)
+int	main(int	argc, char	**argv)
 {
-	(void)	argc;
-	(void)	argv;
 	int	index;
 	int	index2;
 
+	(void)argc;
 	index = 1;
 	while (argv[index] != (void *)0)
 	{

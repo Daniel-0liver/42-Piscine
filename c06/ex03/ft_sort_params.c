@@ -3,64 +3,75 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dateixei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 00:08:52 by dateixei          #+#    #+#             */
-/*   Updated: 2021/08/20 00:09:07 by dateixei         ###   ########.fr       */
+/*   Updated: 2021/08/25 01:21:25 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include <unistd.h>
+#include <stdio.h>
 
-int tab_size(char   **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
-    int count;
+	int	index;
 
-    count = 0;
-    while (argv[count] != (void *)0)
-        count++;
-    return (count);
+	index = 0;
+	while ((s1[index] != '\0') || (s2[index] != '\0'))
+	{
+		if (s1[index] > s2[index])
+			return (1);
+		else if (s1[index] < s2[index])
+			return (0);
+		index++;
+	}
+	return (0);
 }
 
-char    *sort_tab(char  **argv, int size)
+char	*ft_sort_params(int	argc, char	**argv)
 {
-    int     index;
-    int     index2;
-    char    saveChar[size];
+	int		index;
+	int		comp;
+	int		cont;
+	char	*saveTab[100];
 
-    index = 0;
-    index2 = 0;
-    while (index < size - 1)
-    {
-        if (*argv[index] < *argv[index + 1])
-        {
-            index2 = 0;
-            if (argv[index][index2] < argv[index + 1][index2])
-            {
-                saveChar[index] = *argv[index];
-                argv[index] = argv[index + 1];
-                argv[index + 1] = &saveChar[index];
-            }
-            index2++;
-        }
-        printf("%s\n", argv[index]);
-        index++;
-    }
-    return (*argv);
+	cont = 0;
+	while (cont <= argc)
+	{
+		index = 1;
+		while (index < argc - 1)
+		{
+			comp = ft_strcmp(argv[index], argv[index + 1]);
+			if (comp == 1 && index < argc - 1)
+			{
+				saveTab[index] = argv[index + 1];
+				argv[index + 1] = argv[index];
+				argv[index] = saveTab[index];
+			}
+			index++;
+		}
+		cont++;
+	}
+	return (*argv);
 }
 
-int main(int    argc, char  **argv)
+int	main(int	argc, char	**argv)
 {
-    int    size;
-    int    index;
-    (void) argc;
-    (void) argv;
+	int		index;
+	int		index2;
 
-    index = 0;
-    size = tab_size(argv);
-    while (index < size)
-    {
-        sort_tab(argv, size);
-        index++;
-    }
+	*argv = ft_sort_params(argc, argv);
+	index = 1;
+	while (argv[index])
+	{
+		index2 = 0;
+		while (argv[index][index2] != '\0')
+		{
+			write(1, &argv[index][index2], 1);
+			index2++;
+		}
+		write(1, "\n", 1);
+		index++;
+	}
 }
