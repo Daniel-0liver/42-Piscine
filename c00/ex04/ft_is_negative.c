@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dateixei <dateixei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 22:17:29 by dateixei          #+#    #+#             */
-/*   Updated: 2021/09/09 22:17:29 by dateixei         ###   ########.fr       */
+/*   Created: 2021/09/09 22:57:01 by dateixei          #+#    #+#             */
+/*   Updated: 2021/09/09 22:57:01 by dateixei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,19 @@ void	ft_putchar(char	c)
 	write(1, &c, 1);
 }
 
-void    ft_print_reverse_alphabet(void)
+void    ft_is_negative(int  n)
 {
-    char    c;
-
-    c = 'z';
-    while (c >= 'a')
-    {
-        ft_putchar(c);
-        c--;
-    }
+    if (n < 0)
+        ft_putchar('N');
+    else
+        ft_putchar('P');
 }
 
 int main()
 {
-    ft_print_reverse_alphabet();
-    return (0);
+    int	n;
+
+	n = 0;
+	ft_is_negative(n);
+	return (0);
 }

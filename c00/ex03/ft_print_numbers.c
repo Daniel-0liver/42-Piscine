@@ -17,7 +17,7 @@ void	ft_putchar(char	c)
 	write(1, &c, 1);
 }
 
-void    ft_print_alphabet(void)
+void    ft_print_numbers(void)
 {
     char    c;
 
@@ -31,6 +31,6 @@ void    ft_print_alphabet(void)
 
 int main()
 {
-    ft_print_alphabet();
+    ft_print_numbers();
     return (0);
 }
