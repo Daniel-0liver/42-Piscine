@@ -34,6 +34,15 @@ void	ft_print_array(int	array[], int	n)
 	}
 }
 
+void	ft_change_array(int	array[], int	n, int	index)
+{
+	while (index < n)
+	{
+		array[index + 1] = array[index] + 1;
+		index++;
+	}
+}
+
 void    ft_print_combn(int  n)
 {
     int array[n];
@@ -42,11 +51,24 @@ void    ft_print_combn(int  n)
 	index = -1;
 	while (index++ < n)
 		array[index] = index;
-	index = 0;
-	ft_print_array(array, n);
+	while (array[0] < array[1])
+	{
+		index = n - 2;
+		while (index >= 0)
+		{
+			ft_print_array(array, n);
+			array[index] += 1;
+			if (array[index] == array[index + 1])
+			{
+				index--;
+				array[index]++;
+				ft_change_array(array, n, index);
+			}
+		}
+	}
 }
 
 int main(void)
 {
-	ft_print_combn(1);
+	ft_print_combn(4);
 }
